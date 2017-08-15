@@ -22,6 +22,9 @@ public class PreprocessEvent implements Listener {
 
     @EventHandler
     public void onCommand(PlayerCommandPreprocessEvent e){
+        if(!e.getPlayer().hasPermission("givecacher.give")){
+            return;
+        }
             if(e.getMessage().startsWith("/give")){
                 String player = e.getMessage().split(" ")[1];
                 String command = e.getMessage();
